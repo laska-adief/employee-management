@@ -12,6 +12,7 @@ export class EmployeeService {
   constructor(private http:HttpClient) { }
 
   selectedDataEditEmployee!: Employee;
+  selectedDataDetailEmployee!: Employee;
 
   getAllEmployee() {
     return this.http.get<Employee[]>(this.URL);  
@@ -27,5 +28,9 @@ export class EmployeeService {
 
   editEmployee(id:string, employeeData: Employee) {
     return this.http.put(this.URL+'/'+id, employeeData);
+  }
+
+  selectDetailEmployee(employeeData: Employee) {
+    this.selectedDataDetailEmployee = employeeData;
   }
 }
