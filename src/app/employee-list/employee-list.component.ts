@@ -73,4 +73,12 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     }
   }
 
+  viewEmployee(id:string) {
+    const dataEmployee = this.employeeData.find(employee => employee.id === id);
+    if(dataEmployee) {
+      this.employeeService.selectDetailEmployee(dataEmployee);
+      this.router.navigate(['/detail', id]);
+    }
+  }
+
 }

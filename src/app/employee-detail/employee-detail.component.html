@@ -1,1 +1,63 @@
-<p>employee-detail works!</p>
+<div class="heading">
+  <h2>{{'Detail Employee'}}</h2>
+</div>
+<div class="detail-employee">
+  <button mat-icon-button routerLink="/list">
+    <mat-icon>keyboard_return</mat-icon>
+  </button>
+  <div class="avatar">
+    <img [src]="employeeData.avatar" alt="">
+  </div>
+  <div class="grid content">
+    <div class="row">
+      <div class="col-6 data">
+        <p class="label">{{'First Name'}}</p>
+        <p class="value">{{employeeData.firstName}}</p>
+      </div>
+      <div class="col-6 data">
+        <p class="label">{{'Last Name'}}</p>
+        <p class="value">{{employeeData.lastName}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 data">
+        <p class="label">{{'Email'}}</p>
+        <p class="value">{{employeeData.email}}</p>
+      </div>
+      <div class="col-6 data">
+        <p class="label">{{'Phone'}}</p>
+        <p class="value">{{employeeData.phone}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 data">
+        <p class="label">{{'Gender'}}</p>
+        <p class="value">{{employeeData.gender}}</p>
+      </div>
+      <div class="col-6 data">
+        <p class="label">{{'Birth Date'}}</p>
+        <p class="value">{{employeeData.birthDate}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 data">
+        <p class="label">{{'Job Title'}}</p>
+        <p class="value">{{employeeData.jobTitle}}</p>
+      </div>
+      <div class="col-6 data">
+        <p class="label">{{'Street'}}</p>
+        <p class="value">{{employeeData.street}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 data">
+        <p class="label">{{'City'}}</p>
+        <p class="value">{{employeeData.city}}</p>
+      </div>
+      <div class="col-6 data">
+        <p class="label">{{'Country'}}</p>
+        <p class="value">{{employeeData.country}}</p>
+      </div>
+    </div>
+  </div>
+</div>
