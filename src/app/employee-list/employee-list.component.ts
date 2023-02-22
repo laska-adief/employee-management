@@ -81,4 +81,49 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     }
   }
 
+  deleteEmployee(id:string, employee:Employee) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: `You will delete employee ${employee.firstName} ${employee.lastName}`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#1976d2',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.isWaitingForResponse = true;
+        this.employeeService.deleteEmployee(id).subscribe({
+          next: (res) => {
+            if (res) {
+              this.isWaitingForResponse = false;
+              Swal.fire({
+                title: 'Bravo!',
+                text: 'Employee Deleted',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#1976d2',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  this.getAllEmployee();
+                }
+              });
+            }
+          },
+          error: (err: any) => {
+            this.isWaitingForResponse = false;
+            console.log(err);
+            Swal.fire({
+              title: 'Error',
+              text: err,
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#1976d2',
+            });
+          },
+        });
+      }
+    });
+  }
+
 }
