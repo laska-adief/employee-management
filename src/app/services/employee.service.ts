@@ -11,11 +11,21 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
+  selectedDataEditEmployee!: Employee;
+
   getAllEmployee() {
     return this.http.get<Employee[]>(this.URL);  
   }
 
   addEmployee(employeeData: Employee) {
     return this.http.post(this.URL, employeeData);
+  }
+
+  selectDataEmployee(employeeData: Employee) {
+    this.selectedDataEditEmployee = employeeData;
+  }
+
+  editEmployee(id:string, employeeData: Employee) {
+    return this.http.put(this.URL+'/'+id, employeeData);
   }
 }
