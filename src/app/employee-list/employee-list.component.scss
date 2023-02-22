@@ -1,0 +1,66 @@
+.container-button {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.add-employee {
+  background: #1976d2;
+  color: white;
+  text-align: right;
+}
+
+.employee-table {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+table {
+  tr {
+    th{
+      text-align: center;
+      font-weight: 600;
+    }
+
+    td {
+      padding-left: 10px;
+      &:nth-child(1) {
+        text-align: center;
+        padding: 4px;
+      }
+
+      &:nth-child(5) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding-left: 0 !important;
+}
+
+.avatar {
+  border-radius: 100%;
+  border: 2px solid #1976d2;
+  width: 45px;
+  height: 45px;
+}
+
+.spinner {
+  margin: 1rem auto;
+}
+
+:host ::ng-deep.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #1976d2;
+}
+
+.no-data {
+  padding: 3rem;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.hide-paginator {
+  display: none !important;
+}

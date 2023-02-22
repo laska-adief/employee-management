@@ -1,1 +1,72 @@
-<p>employee-list works!</p>
+
+<div class="container-button">
+  <button mat-raised-button class="add-employee" routerLink="/add">
+    {{'Add Employee'}}
+  </button>
+</div>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="employee-table">
+
+    <!-- Avatar Column -->
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef> Profile </th>
+      <td mat-cell *matCellDef="let element"> 
+        <img [src]="element?.avatar" alt="" class="avatar">
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element?.civility}} {{element?.fullName}} </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <!-- Job Title Column -->
+    <ng-container matColumnDef="jobTitle">
+      <th mat-header-cell *matHeaderCellDef> Job Title </th>
+      <td mat-cell *matCellDef="let element"> {{element?.jobTitle}} </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button aria-label="View button">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Edit button">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="EdDeleteit button">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="loading">
+      <th mat-header-cell *matHeaderCellDef colspan="100%">
+        <mat-spinner class="spinner"></mat-spinner>
+      </th>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="['loading']" [hidden]="!isWaitingForResponse"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [hidden]="isWaitingForResponse"></tr>
+    <tr></tr>
+  </table>
+
+  <div class="no-data" *ngIf="noData">
+    {{'No Data To Show'}}
+  </div>
+
+  <div [ngClass]="{'hide-paginator' : noData}">
+    <mat-paginator showFirstLastButtons [pageSize]="10" [hidePageSize]="true" [length]="employeeCount">
+    </mat-paginator>
+  </div>
+</div>
