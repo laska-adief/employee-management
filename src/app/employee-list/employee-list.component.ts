@@ -2,6 +2,7 @@ import { NumberInput } from '@angular/cdk/coercion';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Employee } from '../employee';
 import { EmployeeService } from '../services/employee.service';
@@ -22,7 +23,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   noData: boolean = false;
   isWaitingForResponse: boolean = false;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private router: Router, private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.getAllEmployee();
@@ -61,6 +62,15 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
         });
       },
     });
+  }
+
+  editEmployee(id: string) {
+    console.log('id', id);
+    const dataEmployeeEdit = this.employeeData.find(employee => employee.id === id);
+    if(dataEmployeeEdit) {
+      this.employeeService.selectDataEmployee(dataEmployeeEdit);
+      this.router.navigate(['/edit', id]);
+    }
   }
 
 }

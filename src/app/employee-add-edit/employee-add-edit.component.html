@@ -1,5 +1,5 @@
 <div class="heading">
-  <h2>{{'Add Employee'}}</h2>
+  <h2>{{ action === 'add' ? 'Add Employee' : action === 'edit' ? 'Edit Employee' : ''}}</h2>
 </div>
 
 <div class="grid form">
@@ -97,7 +97,7 @@
 </div>
 
 <div class="button-submit">
-  <button mat-raised-button (click)="addEmployee()">
+  <button mat-raised-button (click)="onSubmitEmployee()">
     {{'Submit'}}
   </button>
 </div>
