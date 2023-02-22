@@ -1,0 +1,56 @@
+.heading {
+  margin: 2rem 0;
+
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1976d2;
+  }
+}
+
+.card-container {
+  box-shadow: 0 0 10px #aeaeae;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.total-employee {
+  width: 200px;
+
+  &-label {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #525252;
+  }
+
+  &-value {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+  }
+}
+
+.chart-label {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #525252;
+}
+
+.navigation {
+  display: inline-block;
+  font-size: 20px;
+  color: #1976d2;
+  margin-bottom: 20px;
+}
+
+.menu {
+  display: block;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding-bottom: 12px;
+
+  &:hover {
+    color: #1976d2;
+  }
+}

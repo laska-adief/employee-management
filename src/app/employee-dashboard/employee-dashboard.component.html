@@ -1,1 +1,44 @@
-<p>employee-dashboard works!</p>
+<div class="heading">
+  <h1> {{'Welcome To Employee Management'}} </h1>
+</div>
+
+<div class="content">
+  <div class="grid">
+    <div class="row">
+      <div class="col-10">
+        <div class="card-container">
+          <div class="card-container total-employee">
+            <p class="total-employee-label">{{'Total Employee'}}</p>
+            <p class="total-employee-value">{{totalEmployee}}</p>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card-container chart-gender">
+                <p class="chart-label">{{'Gender'}}</p>
+                <canvas id="genderChart"></canvas>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-container chart-country">
+                <p class="chart-label">{{'Country'}}</p>
+                <canvas id="countryChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card-container">
+            <h5 class=" navigation">Navigation</h5>
+            <a routerLink="/dashboard" class="menu">Dashboard</a>
+            <a routerLink="/list" class="menu">Employee List</a>
+        </div>
+          <!-- <h3 class="navigation">Navigation</h3>
+          <a routerLink="/dashboard" class="menu">Dashboard</a>
+          <a routerLink="/list" class="menu">Employee List</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
