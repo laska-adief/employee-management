@@ -1,1 +1,107 @@
-<p>employee-add-edit works!</p>
+<div class="heading">
+  <h2>{{'Add Employee'}}</h2>
+</div>
+
+<div class="grid form">
+  <div class="row" [formGroup]="employeeForm">
+    <!-- Gender Input -->
+    <div class="col-12 mb-3">
+      <mat-label>Gender </mat-label>
+      <mat-radio-group formControlName="gender" color="primary">
+        <mat-radio-button class="gender-option" value="male">Male</mat-radio-button>
+        <mat-radio-button class="gender-option" value="female">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    
+    <!-- First Name Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+    </div>
+    
+    <!-- Last Name Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+    </div>
+
+    <!-- Email Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+    </div>
+
+    <!-- Phone Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone">
+      </mat-form-field>
+    </div>
+
+    <!-- Avatar Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Avatar</mat-label>
+        <input matInput formControlName="avatar">
+      </mat-form-field>
+    </div>
+
+    <!--Birth Date Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Birth Date</mat-label>
+        <input matInput [matDatepicker]="birthDate" formControlName="birthDate" (click)="birthDate.open()">
+        <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+        <mat-datepicker #birthDate></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- Job Title Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Job Title</mat-label>
+        <input matInput formControlName="jobTitle">
+      </mat-form-field>
+    </div>
+
+    <!-- Street Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street">
+      </mat-form-field>
+    </div>
+
+    <!-- City Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
+    </div>
+
+    <!-- Country Input -->
+    <div class="col-6 mb-3">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Country</mat-label>
+        <input matInput formControlName="country">
+      </mat-form-field>
+    </div>
+</div>
+
+<div class="button-submit">
+  <button mat-raised-button (click)="addEmployee()">
+    {{'Submit'}}
+  </button>
+</div>
+
+<div class="loading" *ngIf="isWaitingForResponse">
+  <mat-spinner></mat-spinner>
+</div>

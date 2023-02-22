@@ -1,0 +1,51 @@
+.heading {
+  margin-top: 24px;
+  text-align: center;
+  h2 {
+    font-size: 36px;
+  }
+}
+
+.form {
+  margin: 2rem 0;
+}
+
+.gender-option {
+  margin-left: 16px;
+}
+
+.label-gender {
+  margin-right: 16px;
+}
+
+.input {
+  width: 100%;
+}
+
+.button-submit {
+  text-align: right;
+  button {
+    background: #1976d2;
+    color: white;
+  }
+}
+
+// .content {
+//   position: relative;
+// }
+
+.loading {
+  background: rgba(0,0,0,.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:host ::ng-deep.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #1976d2;
+}
