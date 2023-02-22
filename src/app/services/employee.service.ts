@@ -33,4 +33,8 @@ export class EmployeeService {
   selectDetailEmployee(employeeData: Employee) {
     this.selectedDataDetailEmployee = employeeData;
   }
+
+  deleteEmployee(id:string) {
+    return this.http.delete(this.URL+'/'+id);
+  }
 }
