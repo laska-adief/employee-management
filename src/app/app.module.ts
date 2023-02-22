@@ -10,6 +10,9 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeAddEditComponent } from './employee-add-edit/employee-add-edit.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularMaterialModule } from './modules/angular-material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    AngularMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
