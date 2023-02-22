@@ -14,6 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const material = [
   MatButtonModule,
@@ -28,7 +29,8 @@ const material = [
   MatCheckboxModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTooltipModule
 ];
 
 @NgModule({
